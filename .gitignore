@@ -1,5 +1,5 @@
 # https://gist.github.com/santoshpurbey/6f982faf1eacdac153ffd86a3a694239
-.idea
+.idea/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
