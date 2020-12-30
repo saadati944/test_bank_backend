@@ -8,5 +8,9 @@
 - [X] transfer index page to blog app
 - [ ] create model for question
 - [X] add user model
-- [ ] create login/logout system
+- [ ] create a rich login/logout system
 - [X] add RESTFul api support to project
+- [ ] add rest api to add a question in tbank app
+- [ ] add rest api to get a question in tbank app
+- [ ] add rest api to update a question in tbank app
+- [ ] add rest api to delete a question in tbank app
