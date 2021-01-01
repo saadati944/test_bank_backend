@@ -16,4 +16,5 @@
 - [ ] add rest api to delete a question in tbank app
 - [X] change database to mongo db
 - [ ] add a field in quize model to describe who can access this quiz
-- [ ] create admin page for tbank app
+- [X] create admin page for tbank app
+- [ ] change get_XXXs functions in models and upgrade them to show only a few items

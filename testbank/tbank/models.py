@@ -7,6 +7,12 @@ class UserProfile(models.Model):
     students = models.ManyToManyField(User, related_name='students')
     teachers = models.ManyToManyField(User, related_name='teachers')
     friends = models.ManyToManyField(User, related_name='friends')
+    def get_students(self):
+        return ', '.join([s.first_name+' '+s.last_name for s in self.students.all()])
+    def get_teachers(self):
+        return ', '.join([s.first_name+' '+s.last_name for s in self.teachers.all()])
+    def get_friends(self):
+        return ', '.join([s.first_name+' '+s.last_name for s in self.friends.all()])
     def __str__(self):
         return self.user.first_name + ' ' + self.user.last_name
 
@@ -38,6 +44,10 @@ class Question(models.Model):
     question = models.CharField(max_length=4096, null=True, blank=False)
     answers=models.ManyToManyField(Answer, related_name='answers')
 
+    def get_answers(self):
+        return ', '.join([s.answer for s in self.answers.all()])
+    def get_tags(self):
+        return ', '.join([s.tag for s in self.tags.all()])
     def __str__(self):
         return self.title
 
@@ -51,3 +61,7 @@ class Quiz(models.Model):
     isprivate=models.BooleanField(default=False)
     description = models.CharField(max_length=4096, null=True)
     questions=models.ManyToManyField(Question, related_name='questions')
+
+
+    def get_questions(self):
+        return ', '.join([s.title for s in self.questions.all()])
