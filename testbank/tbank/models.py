@@ -33,7 +33,7 @@ class Question(models.Model):
     )
 
     isprivate = models.BooleanField(default=False)
-    #tags = models.ManyToManyField()
+    tags = models.ManyToManyField('Tag', related_name='tags')
     title=models.CharField(max_length=120, null=False, blank=False, default='title')
     question = models.CharField(max_length=4096, null=True, blank=False)
     answers=models.ManyToManyField(Answer, related_name='answers')
@@ -41,6 +41,8 @@ class Question(models.Model):
     def __str__(self):
         return self.title
 
+class Tag(models.Model):
+    tag=models.CharField(max_length=120, null=False, blank=False, default='tag')
 
 class Quiz(models.Model):
     name = models.CharField(max_length=120, null=False, blank=False, default="quiz")
