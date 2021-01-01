@@ -77,13 +77,23 @@ WSGI_APPLICATION = 'testbank.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-}
+}'''
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'your-db-name',
+        'CLIENT': {
+           'host': 'localhost',
+           'port': 27017
+        }
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
